@@ -1,5 +1,10 @@
-import { hydrate } from "preact";
-import { Home } from "./components";
-import "./style.css";
+import { Hono } from "hono";
+import { App } from "./client/";
+import { renderer } from "./middleware";
 
-hydrate(<Home />, document.body);
+const client = new Hono();
+
+client.use(renderer);
+client.get("*", (c) => c.render(<App />));
+
+export { client };
