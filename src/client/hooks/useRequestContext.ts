@@ -1,5 +1,5 @@
 import { useContext } from "preact/hooks";
-import { RequestContext } from "../../../renderer";
+import { RequestContext } from "../../middleware";
 
 export function useRequestContext() {
   const c = useContext(RequestContext);

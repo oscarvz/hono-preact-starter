@@ -19,6 +19,7 @@
     "@biomejs/biome": "^2.2.4",
     "@cloudflare/vite-plugin": "^1.13.7",
     "@preact/preset-vite": "^2.10.2",
+    "@vitejs/plugin-react": "^5.0.4",
     "vite": "^7.1.7",
     "vite-ssr-components": "^0.5.1",
     "wrangler": "^4.40.2"

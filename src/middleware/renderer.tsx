@@ -2,7 +2,7 @@ import type { Context } from "hono";
 import type { MiddlewareHandler } from "hono/types";
 import { createContext, type ComponentChildren } from "preact";
 import { renderToString } from "preact-render-to-string";
-import { Script, ViteClient } from "vite-ssr-components/react";
+import { ReactRefresh, Script, ViteClient } from "vite-ssr-components/react";
 import { Router } from "wouter-preact";
 
 export const RequestContext = createContext<Context | null>(null);
@@ -15,6 +15,7 @@ export const renderer: MiddlewareHandler = (c, next) => {
           <head>
             <title>Hono Preact Starter</title>
             <ViteClient />
+            <ReactRefresh />
             <Script type="module" src="/src/client/client.tsx" />
             <meta
               name="viewport"

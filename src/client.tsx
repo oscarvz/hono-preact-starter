@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { App } from "./client/";
+import { App } from "./client/App";
 import { renderer } from "./middleware";
 
 const client = new Hono();
