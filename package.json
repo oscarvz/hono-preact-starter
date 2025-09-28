@@ -10,6 +10,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "hono": "^4.9.9",
     "preact": "^10.27.2",
     "preact-render-to-string": "^6.6.1",
@@ -19,7 +20,6 @@
     "@biomejs/biome": "^2.2.4",
     "@cloudflare/vite-plugin": "^1.13.7",
     "@preact/preset-vite": "^2.10.2",
-    "@vitejs/plugin-react": "^5.0.4",
     "vite": "^7.1.7",
     "vite-ssr-components": "^0.5.1",
     "wrangler": "^4.40.2"

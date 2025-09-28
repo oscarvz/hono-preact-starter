@@ -1,5 +1,39 @@
-.main {
+.layout {
   display: grid;
+  grid-template-rows: auto 1fr;
   place-items: center;
-  height: 100%;
+  min-height: 100%;
+
+  & > nav {
+    width: 100%;
+
+    & > ul {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      border-bottom: 1px solid currentColor;
+      padding: 16px;
+      list-style: none;
+      margin: 0;
+    }
+  }
+
+  & > main > * {
+    padding: 16px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid currentColor;
+  }
+}
+
+.navLink {
+  all: unset;
+  border: 1px solid currentColor;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.navLinkActive {
+  text-decoration: underline;
 }

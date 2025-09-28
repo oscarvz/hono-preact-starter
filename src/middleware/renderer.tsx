@@ -2,7 +2,7 @@ import type { Context } from "hono";
 import type { MiddlewareHandler } from "hono/types";
 import { createContext, type ComponentChildren } from "preact";
 import { renderToString } from "preact-render-to-string";
-import { ReactRefresh, Script, ViteClient } from "vite-ssr-components/react";
+import { Script, ViteClient } from "vite-ssr-components/react";
 import { Router } from "wouter-preact";
 
 export const RequestContext = createContext<Context | null>(null);
@@ -15,7 +15,6 @@ export const renderer: MiddlewareHandler = (c, next) => {
           <head>
             <title>Hono Preact Starter</title>
             <ViteClient />
-            <ReactRefresh />
             <Script type="module" src="/src/client/client.tsx" />
             <meta
               name="viewport"
@@ -32,6 +31,8 @@ export const renderer: MiddlewareHandler = (c, next) => {
       );
     }
 
+    // Preact doesn't have `use()` implemented yet; go with the `renderToString`
+    // approach for now
     const body = `<!DOCTYPE html>${renderToString(<Html />, c)}`;
     return c.html(body);
   });
@@ -41,7 +42,8 @@ export const renderer: MiddlewareHandler = (c, next) => {
 
 declare module "hono" {
   interface ContextRenderer {
-    // biome-ignore lint/style/useShorthandFunctionType: intended signature
+    /* biome-ignore lint/style/useShorthandFunctionType: intended signature.
+       Props can be typed, such as page title etc. */
     (app: ComponentChildren, props?: unknown): Response | Promise<Response>;
   }
 }
