@@ -3,6 +3,11 @@
 Starter template for a Hono app on Cloudflare Workers with Preact frontend.
 Get going fast with a simple, minimalistic setup. No magic, no bloat shipped.
 
+> [!NOTE]
+> Project is a tryout in the search for a solid, painless full-stack approach in
+> Hono apps.
+> I'm setting it up as a template repo for firing off new projects easily.
+
 ## Features
 
 - **Hono** - Fast web framework for Cloudflare Workers
@@ -39,4 +44,4 @@ Can't have it all, can we?
 
 > [!WARNING]
 > Currently doesn't support server-side data fetching & hydration for passed
-> down props. This will likely be addressed soon.
+> down props. This might or might not be addressed soon.
